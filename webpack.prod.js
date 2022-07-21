@@ -2,7 +2,7 @@
 
 const path = require('path');
 // eslint-disable-next-line import/no-extraneous-dependencies
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { version } = require('./package.json');
 
 module.exports = [{
@@ -42,7 +42,9 @@ module.exports = [{
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [path.resolve(__dirname, 'src/scss/')]
+              sassOptions: {
+                includePaths: [path.resolve(__dirname, 'src/scss/')]
+              }
             }
           }
         ]
@@ -59,7 +61,10 @@ module.exports = [{
       }
     ]
   },
-  plugins: [new CleanWebpackPlugin(['lib'])]
+  plugins: [
+    new CleanWebpackPlugin({
+        cleanAfterEveryBuildPatterns: ['dist']
+    })]
 }, {
   entry: './index.js',
   externals: {
@@ -112,7 +117,9 @@ module.exports = [{
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [path.resolve(__dirname, 'src/scss/')]
+              sassOptions:{
+                includePaths: [path.resolve(__dirname, 'src/scss/')]
+              }
             }
           }
         ]
@@ -129,6 +136,10 @@ module.exports = [{
       }
     ]
   },
-  plugins: [new CleanWebpackPlugin(['module'])]
+  // plugins: [new CleanWebpackPlugin(['module'])]
+  plugins: [
+    new CleanWebpackPlugin({
+        cleanAfterEveryBuildPatterns: ['dist']
+    })]
 }
 ];
