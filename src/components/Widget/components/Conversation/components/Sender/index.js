@@ -33,7 +33,6 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       // formRef.current.submit() would not trigger onSubmit
       
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
-      console.log("dispacherEvent:",formRef.current.dispatchEvent(new Event('submit', { cancelable: true })))
       
       console.log("e.target.value",e.target.value)
       console.log("inputValue",inputValue)
