@@ -48,11 +48,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
         <TextareaAutosize type="text" 
                           minRows={1} 
                           // onKeyDown={onEnterPress} 
-                          onKeyDown={(e)=>{
-                            if(e.key === 'Enter'){
-                              handleSubmit(e)
-                            }
-                          }} 
+                          
+                          onSubmit={handleSubmit}
 
                           maxRows={3} 
                           onChange={handleChange} 
