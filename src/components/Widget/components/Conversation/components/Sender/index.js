@@ -23,22 +23,19 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   }
 
   function onEnterPress(e) {
-        console.log("USANDO YARN ADD")
+        
     if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
       
       
       e.preventDefault();
 
       // by dispatching the event we trigger onSubmit
-      // formRef.current.submit() would not trigger onSubmit
+      // formRef.current.submit()// would not trigger onSubmit
       
-      // formRef.current.dispatchEvent(new Event('submit'))//, { cancelable: true }));
+      formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
       
-      // console.log("e.target.value",e.target.value)
-      // console.log("inputValue",inputValue)
       console.log("ONENTERPRESS e",e)
       // handleSubmit(e)
-      this.onSubmit()
     }
   }
 
@@ -48,7 +45,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
         {/* <textarea onChange={handleChange}></textarea> */}
         <TextareaAutosize type="text" 
                           minRows={1} 
-                          onKeyDown={onEnterPress} 
+                          // onKeyDown={onEnterPress} 
                           maxRows={3} 
                           onChange={handleChange} 
                           className="rw-new-message" 
