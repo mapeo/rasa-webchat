@@ -27,7 +27,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     console.log("ON ETNTERPRESS  ")
     if (e.key === 13 && e.shiftKey === false) {
       console.log(" inside entrerpress>if ")//matheus
-      handleSubmit(e); //matheus
+      handleSubmit(e); //matheus-
       e.preventDefault();
       // by dispatching the event we trigger onSubmit
       // formRef.current.submit() would not trigger onSubmit
