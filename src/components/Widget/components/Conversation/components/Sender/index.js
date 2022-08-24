@@ -32,12 +32,13 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       // by dispatching the event we trigger onSubmit
       // formRef.current.submit() would not trigger onSubmit
       
-      formRef.current.dispatchEvent(new Event('submit'))//, { cancelable: true }));
+      // formRef.current.dispatchEvent(new Event('submit'))//, { cancelable: true }));
       
-      console.log("e.target.value",e.target.value)
-      console.log("inputValue",inputValue)
+      // console.log("e.target.value",e.target.value)
+      // console.log("inputValue",inputValue)
       console.log("ONENTERPRESS e",e)
-      handleSubmit(e)
+      // handleSubmit(e)
+      this.onSubmit()
     }
   }
 
@@ -47,7 +48,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
         {/* <textarea onChange={handleChange}></textarea> */}
         <TextareaAutosize type="text" 
                           minRows={1} 
-                          // onKeyDown={onEnterPress} 
+                          onKeyDown={onEnterPress} 
                           
                           onSubmit={handleSubmit}
 
