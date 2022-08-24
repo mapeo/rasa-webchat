@@ -45,7 +45,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
         {/* <textarea onChange={handleChange}></textarea> */}
         <TextareaAutosize type="text" 
                           minRows={1} 
-                          // onKeyDown={onEnterPress} 
+                          onKeyDown={onEnterPress} 
                           maxRows={3} 
                           onChange={handleChange} 
                           className="rw-new-message" 
