@@ -9,14 +9,15 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   const [inputValue, setInputValue] = useState('');
   const formRef = useRef('');
   function handleChange(e) {
-    console.log("ON handleChange  ")//matheus
+    console.log("ON handleChange  "); //matheus
     
     setInputValue(e.target.value);
+    handleSubmit(e); //matheus-
 
   }
 
   function handleSubmit(e) {
-    console.log("ON handleSubmit  ")//matheus
+    console.log("ON handleSubmit  "); //matheus
 
     sendMessage(e);
     setInputValue('');
@@ -26,7 +27,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   function onEnterPress(e) {
     console.log("ON ETNTERPRESS  ")
     if (e.key === 13 && e.shiftKey === false) {
-      console.log(" inside entrerpress>if ")//matheus
+      console.log(" inside entrerpress > if "); //matheus
       handleSubmit(e); //matheus-
       e.preventDefault();
       // by dispatching the event we trigger onSubmit
