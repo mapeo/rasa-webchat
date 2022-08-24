@@ -23,7 +23,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   }
 
   function onEnterPress(e) {
-        
+        console.log("USANDO YARN ADD")
     if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
       
       
