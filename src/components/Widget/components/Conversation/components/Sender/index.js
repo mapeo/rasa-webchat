@@ -40,6 +40,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       // formRef.current.submit() would not trigger onSubmit
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
 
+      console.log(" dispatcherEvent "); //matheus
+
       handleSubmit(e); //matheus-
 
     }
