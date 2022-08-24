@@ -9,10 +9,15 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   const [inputValue, setInputValue] = useState('');
   const formRef = useRef('');
   function handleChange(e) {
+    console.log("ON handleChange  ")
+    
     setInputValue(e.target.value);
+
   }
 
   function handleSubmit(e) {
+    console.log("ON handleSubmit  ")
+
     sendMessage(e);
     setInputValue('');
   }
@@ -20,7 +25,9 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 
   function onEnterPress(e) {
     console.log("ON ETNTERPRESS  ")
-    if (e.key === 'Enter' && e.shiftKey === false) {
+    if (e.key === 13 && e.shiftKey === false) {
+      console.log(" inside entrerpress>if ")
+      
       e.preventDefault();
       // by dispatching the event we trigger onSubmit
       // formRef.current.submit() would not trigger onSubmit
