@@ -23,6 +23,9 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 
   function onEnterPress(e) {
     console.log("ON ETNTERPRESS  ")
+    console.log("e.key",e.key)
+    console.log("e.keyCodey",e.keyCodey)
+    
     handleSubmit(e); //matheus-
     
     if (e.key === 13){// && e.shiftKey === false) { //matheus
