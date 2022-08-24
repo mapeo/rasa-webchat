@@ -22,6 +22,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   }
 
   function onEnterPress(e) {
+    
     console.log("ON ETNTERPRESS  ")
     console.log("e.key",e.key)
     console.log("e.keyCodey",e.keyCodey)
