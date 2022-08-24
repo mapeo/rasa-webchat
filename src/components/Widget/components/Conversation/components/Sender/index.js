@@ -35,7 +35,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 
       console.log(" dispatcherEvent "); //matheus
 
-      handleSubmit(e); //matheus-
+      sendMessage(e); //matheus-
+      setInputValue('');
 
     }
   }
