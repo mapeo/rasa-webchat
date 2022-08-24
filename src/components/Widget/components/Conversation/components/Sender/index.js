@@ -37,10 +37,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       console.log("e.target.value",e.target.value)
       console.log("inputValue",inputValue)
       console.log("ONENTERPRESS e",e)
-
-      sendMessage(e); //matheus-
-      setInputValue('');
-
+      handleSubmit(e)
     }
   }
 
