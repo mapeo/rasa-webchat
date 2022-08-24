@@ -15,8 +15,11 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   function handleSubmit(e) {
     console.log("ON handleSubmit  "); //matheus
 
+    console.log(e)
     sendMessage(e);
-    // setInputValue('');
+    setInputValue('');
+
+
 
   }
 
