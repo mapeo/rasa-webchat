@@ -25,7 +25,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     
     //console.log("ON ETNTERPRESS  ");
     
-    console.log("e.keyCodey",e.keyCodey);
+    // console.log("e.keyCodey",e.keyCodey);
     
     //handleSubmit(e); //matheus-
     
