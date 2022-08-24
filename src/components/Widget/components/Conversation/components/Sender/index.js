@@ -13,9 +13,10 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   }
 
   function handleSubmit(e) {
-    console.log("ON handleSubmit  "); //matheus
+    console.log("ON handleSubmit  e",e)
 
-    console.log(e)
+    
+
     sendMessage(e);
     setInputValue('');
 
@@ -34,7 +35,9 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
       console.log("dispacherEvent:",formRef.current.dispatchEvent(new Event('submit', { cancelable: true })))
       
-      console.log(e.target.value)
+      console.log("e.target.value",e.target.value)
+      console.log("inputValue",inputValue)
+      console.log("ONENTERPRESS e",e)
 
       sendMessage(e); //matheus-
       setInputValue('');
