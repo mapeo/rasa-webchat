@@ -9,7 +9,6 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   const [inputValue, setInputValue] = useState('');
   const formRef = useRef('');
   function handleChange(e) {
-    console.log("ON handleChange  "); //matheus
     setInputValue(e.target.value);
   }
 
@@ -31,9 +30,9 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     
     if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
       
-      console.log(" inside entrerpress > if "); //matheus
+      // console.log(" inside entrerpress > if "); //matheus
       
-      e.preventDefault();
+      // e.preventDefault();
 
 
       // by dispatching the event we trigger onSubmit
