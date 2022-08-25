@@ -34,7 +34,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 
     console.log("keyValue : ",keyValue)
 
-    if (key === 'Enter'){// && key === '') { //matheus
+    if (keyValue === 'Enter'){// && key === '') { //matheus
       
       
       // e.preventDefault();
