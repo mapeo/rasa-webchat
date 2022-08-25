@@ -2,8 +2,9 @@
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import TextareaAutosize from 'react-textarea-autosize';
-// import Send from 'assets/send_button';
+import Send from 'assets/send_button';
 import './style.scss';
+
 
 // import { Link } from 'react-router-dom'
 import React from 'react';
