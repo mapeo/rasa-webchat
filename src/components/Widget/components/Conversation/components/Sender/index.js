@@ -7,10 +7,13 @@ import './style.scss';
 
 const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
   const [inputValue, setInputValue] = useState('');
+  const [key, setKeyValue] = useState('');
   const formRef = useRef('');
   
   function handleChange(e) {
     setInputValue(e.target.value);
+    setKeyValue(e.key);
+    onEnterPress()
   }
 
   function handleSubmit() {
@@ -24,9 +27,9 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     setInputValue('');
   }
 
-  function onEnterPress(e) {
+  function onEnterPress(key) {
 
-    if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
+    if (key === 'Enter'){// && key === '') { //matheus
       
       
       // e.preventDefault();
