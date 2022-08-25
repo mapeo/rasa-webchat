@@ -19,6 +19,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     // console.log("inputValue e:",inputValue)
     // sendMessage(inputValue)
     console.log("formRef : ",formRef)
+    console.log("inputValue : ",inputValue)
     sendMessage(inputValue);
     setInputValue('');
   }
