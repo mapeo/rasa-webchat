@@ -59,7 +59,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       // <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
       <form className="rw-sender" onSubmit={handleSubmit}>
         <textarea onChange={handleChange}></textarea>
-        <button type="button" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
+        <button type="submit" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
           <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
         </button>
       </form>));
