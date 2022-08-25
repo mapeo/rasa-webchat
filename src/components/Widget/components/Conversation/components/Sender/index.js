@@ -1,5 +1,5 @@
 // import React, { useForm, useState, useRef } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import TextareaAutosize from 'react-textarea-autosize';
 // import Send from 'assets/send_button';
