@@ -15,7 +15,9 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 
   function handleSubmit(e) {
     console.log("handleSubmit e:",e)
-    sendMessage(e);
+    console.log("inputValue e:",inputValue)
+    sendMessage(inputValue)
+    // sendMessage(e);
     setInputValue('');
   }
 
@@ -32,9 +34,11 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
       
       console.log("ONENTERPRESS e",e)
-      e.value = inputValue    
-      sendMessage(inputValue)
-      handleSubmit(e)
+      console.log("inputValue e:",inputValue)
+
+      // e.value = inputValue    
+      // handleSubmit(e)
+      handleSubmit(inputValue)
     }
   }
   return (
