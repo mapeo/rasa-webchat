@@ -8,6 +8,7 @@ import './style.scss';
 const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
   const [inputValue, setInputValue] = useState('');
   const formRef = useRef('');
+  
   function handleChange(e) {
     setInputValue(e.target.value);
   }
