@@ -1,14 +1,15 @@
-import React, {  useState, useRef } from 'react';
+// import React, { useForm, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 // import TextareaAutosize from 'react-textarea-autosize';
 // import Send from 'assets/send_button';
 import './style.scss';
 
 // import { Link } from 'react-router-dom'
+import React from 'react';
 import { useForm } from 'react-hook-form'
 
-const Sender = ({ }) => {
+const Sender = () => {
   
   const { register, hendleSubmit, formState: { errors } } = useForm()
 
@@ -37,19 +38,19 @@ const Sender = ({ }) => {
   //     </form>));
 };
 
-const mapStateToProps = state => ({
-  userInput: state.metadata.get('userInput')
-});
+// const mapStateToProps = state => ({
+//   userInput: state.metadata.get('userInput')
+// });
 
-Sender.propTypes = {
-  sendMessage: PropTypes.func,
-  inputTextFieldHint: PropTypes.string,
-  disabledInput: PropTypes.bool,
-  userInput: PropTypes.string
-};
+// Sender.propTypes = {
+//   sendMessage: PropTypes.func,
+//   inputTextFieldHint: PropTypes.string,
+//   disabledInput: PropTypes.bool,
+//   userInput: PropTypes.string
+// };
 
-export default connect(mapStateToProps)(Sender);
-
+// export default connect(mapStateToProps)(Sender);
+export default Sender;
 // const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
 //   const [inputValue, setInputValue] = useState('');
 //   const [keyValue, setKeyValue] = useState('');
