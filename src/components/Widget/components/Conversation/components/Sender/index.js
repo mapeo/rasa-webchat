@@ -7,8 +7,8 @@ import './style.scss';
 
 const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
   const [inputValue, setInputValue] = useState('');
-  const [key, setKeyValue] = useState('');
-  const formRef = useRef('');
+  const [keyValue, setKeyValue] = useState('');
+  // const formRef = useRef('');
   
   function handleChange(e) {
     setInputValue(e.target.value);
@@ -21,16 +21,18 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     // console.log("handleSubmit e:",e)
     // console.log("inputValue e:",inputValue)
     // sendMessage(inputValue)
-    console.log("formRef : ",formRef)
+    // console.log("formRef : ",formRef)
     console.log("inputValue : ",inputValue)
-    console.log("key: ",key)
+    console.log("key: ",keyValue)
     sendMessage(inputValue);
     setInputValue('');
     setKeyValue('');
 
   }
 
-  function onEnterPress(key) {
+  function onEnterPress(keyValue) {
+
+    console.log("keyValue : ",keyValue)
 
     if (key === 'Enter'){// && key === '') { //matheus
       
@@ -44,7 +46,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       
       // console.log("ONENTERPRESS e",e)
       // console.log("inputValue e:",inputValue)
-      console.log("formRef : ",formRef)
+      console.log("keyValue : ",keyValue)
 
       // e.a.value = inputValue    
       // a.value = inputValue
@@ -55,7 +57,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   
   return (
     userInput === 'hide' ? <div /> : (
-      <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
+      // <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
+      <form className="rw-sender" onSubmit={handleSubmit}>
         <textarea onChange={handleChange}></textarea>
         <button type="button" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
           <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
