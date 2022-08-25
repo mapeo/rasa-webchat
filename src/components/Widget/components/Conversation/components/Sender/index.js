@@ -2,12 +2,12 @@
 // import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import TextareaAutosize from 'react-textarea-autosize';
+import React from 'react';
 import Send from 'assets/send_button';
 import './style.scss';
 
 
 // import { Link } from 'react-router-dom'
-import React from 'react';
 import { useForm } from 'react-hook-form'
 
 const Sender = () => {
