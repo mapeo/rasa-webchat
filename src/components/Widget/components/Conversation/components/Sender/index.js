@@ -13,6 +13,7 @@ import { useForm } from 'react-hook-form'
 const Sender = () => {
   
   const { register, hendleSubmit, formState: { errors } } = useForm()
+  const formRef = useRef('');
 
   const onSubmit = data => {
     console.log(data)
@@ -20,7 +21,7 @@ const Sender = () => {
 
   return (
 
-    <form onSubmit={hendleSubmit(onSubmit)}>
+    <form  ref={formRef} onSubmit={hendleSubmit(onSubmit)}>
       <textarea type="text" name="message" {...register("message")}></textarea>
         <buton type="submit" value="enviar"/>{/* <button type="submit" className="rw-send" disabled={!(inputValue && inputValue.length > 0)}> */}
            {/* <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" /> */}
