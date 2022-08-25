@@ -14,11 +14,11 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   }
 
   function handleSubmit(e) {
-    e.preventDefault()
+    // e.preventDefault()
     // console.log("handleSubmit e:",e)
-    console.log("inputValue e:",inputValue)
+    // console.log("inputValue e:",inputValue)
     // sendMessage(inputValue)
-    sendMessage(e);
+    sendMessage(inputValue);
     setInputValue('');
   }
 
@@ -27,19 +27,19 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
       
       
-      e.preventDefault();
+      // e.preventDefault();
 
       // by dispatching the event we trigger onSubmit
       // formRef.current.submit()// would not trigger onSubmit
       
-      formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
+      // formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
       
-      console.log("ONENTERPRESS e",e)
+      // console.log("ONENTERPRESS e",e)
       // console.log("inputValue e:",inputValue)
 
-      e.a.value = inputValue    
-      a.value = inputValue
-      handleSubmit(e)
+      // e.a.value = inputValue    
+      // a.value = inputValue
+      handleSubmit()
       // handleSubmit(inputValue)
     }
   }
@@ -49,7 +49,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
 
         <TextareaAutosize type="text" minRows={1} onKeyDown={onEnterPress} maxRows={3} onChange={handleChange} className="rw-new-message" name="message" placeholder={inputTextFieldHint} disabled={disabledInput || userInput === 'disable'} autoFocus autoComplete="off" />
-        <button type="submit" className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
+        <button type="button" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
           <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
         </button>
       </form>));
