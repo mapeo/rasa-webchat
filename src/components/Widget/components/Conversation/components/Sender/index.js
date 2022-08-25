@@ -25,6 +25,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     console.log("inputValue : ",inputValue)
     sendMessage(inputValue);
     setInputValue('');
+    setKeyValue('');
+
   }
 
   function onEnterPress(key) {
