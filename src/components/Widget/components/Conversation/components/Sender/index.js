@@ -14,8 +14,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   }
 
   function handleSubmit(e) {
-    e.preventDefault()
-    console.log("handleSubmit e:",e)
+    // e.preventDefault()
+    // console.log("handleSubmit e:",e)
     console.log("inputValue e:",inputValue)
     sendMessage(inputValue)
     // sendMessage(e);
@@ -27,14 +27,14 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
       
       
-      e.preventDefault();
+      // e.preventDefault();
 
       // by dispatching the event we trigger onSubmit
       // formRef.current.submit()// would not trigger onSubmit
       
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
       
-      console.log("ONENTERPRESS e",e)
+      // console.log("ONENTERPRESS e",e)
       console.log("inputValue e:",inputValue)
 
       // e.value = inputValue    
