@@ -18,8 +18,10 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     setInputValue('');
   }
 
+  function onEnterPress(e) {
 
     if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
+      
       
       e.preventDefault();
 
@@ -29,10 +31,10 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
       
       console.log("ONENTERPRESS e",e)
-
+      
       handleSubmit(e)
     }
-
+  }
   return (
     userInput === 'hide' ? <div /> : (
       <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
