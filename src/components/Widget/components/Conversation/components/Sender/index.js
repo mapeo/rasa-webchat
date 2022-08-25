@@ -13,7 +13,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     setInputValue(e.target.value);
   }
 
-  function handleSubmit(e) {
+  function handleSubmit() {
     // e.preventDefault()
     // console.log("handleSubmit e:",e)
     // console.log("inputValue e:",inputValue)
