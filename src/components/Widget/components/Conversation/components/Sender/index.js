@@ -8,6 +8,7 @@ import './style.scss';
 const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
   const [inputValue, setInputValue] = useState('');
   const [key, setKeyValue] = useState('');
+  const keyPressed = command.keyPressed
   const formRef = useRef('');
   
   function handleChange(e) {
@@ -27,11 +28,9 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     setInputValue('');
   }
 
-  function onEnterPress(key) {
+  function onEnterPress(keyPressed) {
 
-    if (key === 'Enter'){// && key === '') { //matheus
-      
-      
+    if (keyPressed === 'Enter'){// && key === '') { //matheus
       // e.preventDefault();
 
       // by dispatching the event we trigger onSubmit
@@ -41,7 +40,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       
       // console.log("ONENTERPRESS e",e)
       // console.log("inputValue e:",inputValue)
-      console.log("formRef : ",formRef)
+      console.log("keyPressed : ",keyPressed)
 
       // e.a.value = inputValue    
       // a.value = inputValue
