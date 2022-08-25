@@ -1,11 +1,11 @@
 // import React, { useForm, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import TextareaAutosize from 'react-textarea-autosize';
-import Send from 'assets/send_button';
+// import TextareaAutosize from 'react-textarea-autosize';
+// import Send from 'assets/send_button';
 import './style.scss';
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
 const Sender = ({ }) => {
@@ -19,9 +19,10 @@ const Sender = ({ }) => {
   return (
 
     <form onSubmit={hendleSubmit(onSubmit)}>
-      {/* <input type="text"/> */}
       <textarea type="text" name="message" {...register("message")}></textarea>
-      <button type="submit"></button>
+        <button type="submit" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
+           <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
+         </button>
     </form>
   )
 
