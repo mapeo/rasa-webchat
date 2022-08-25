@@ -1,72 +1,116 @@
-import React, { useState, useRef } from 'react';
+import React, { useForm, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextareaAutosize from 'react-textarea-autosize';
 import Send from 'assets/send_button';
 import './style.scss';
 
-const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
-  const [inputValue, setInputValue] = useState('');
-  const [keyValue, setKeyValue] = useState('');
-  const formRef = useRef('');
+import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+
+const Sender = ({ }) => {
   
-  function handleChange(e) {
-    console.log("*******************************")
+  const { register, hendleSubmit, formState: { errors } } = useForm()
 
-    console.log("handleChange: setInputValue(e.target.value) =  ",e.target.value)
-    setInputValue(e.target.value);
-    console.log("handleChange: setKeyValue(e.key) =  ",e.key)
-    setKeyValue(e.key);
-    onEnterPress()
+  const onSubmit = data => {
+    console.log(data)
   }
 
-  function handleSubmit() {
-    console.log("*******************************")
-    // e.preventDefault()
-    // console.log("handleSubmit e:",e)
-    // console.log("inputValue e:",inputValue)
-    // sendMessage(inputValue)
-    // console.log("formRef : ",formRef)
-    console.log("handleSubmit inputValue : ",inputValue)
-    console.log("handleSubmit keyValue: ",keyValue)
-    sendMessage(inputValue);
-    setInputValue('');
-    setKeyValue('');
-  }
-
-  function onEnterPress(keyValue) {
-
-    console.log("function onEnterPress(keyValue) keyValue : ",keyValue)
-    
-    if (keyValue === 'Enter'){// && key === '') { //matheus
-      // e.preventDefault();
-
-      // by dispatching the event we trigger onSubmit
-      // formRef.current.submit()// would not trigger onSubmit
-      
-      // formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
-      
-      // console.log("ONENTERPRESS e",e)
-      // console.log("inputValue e:",inputValue)
-      console.log("if (keyValue === 'Enter') keyValue : ",keyValue)
-
-      // e.a.value = inputValue    
-      // a.value = inputValue
-      handleSubmit()
-      // handleSubmit(inputValue)
-    }
-  }
-  
   return (
-    userInput === 'hide' ? <div /> : (
-      <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
-      {/* // <form className="rw-sender" onSubmit={handleSubmit}> */}
-        <textarea onChange={handleChange}></textarea>
-        <button type="submit" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
-          <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
-        </button>
-      </form>));
+
+    <form onSubmit={hendleSubmit(onSubmit)}>
+      {/* <input type="text"/> */}
+      <textarea type="text" name="message" {...register("message")}></textarea>
+      <button type="submit"></button>
+    </form>
+  )
+
+  // return (
+  //   userInput === 'hide' ? <div /> : (
+  //     <form className="rw-sender" onSubmit={handleSubmit}>
+  //     {/* // <form className="rw-sender" onSubmit={handleSubmit}> */}
+  //       <textarea onChange={handleChange}></textarea>
+  //       <button type="submit" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
+  //         <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
+  //       </button>
+  //     </form>));
 };
+
+const mapStateToProps = state => ({
+  userInput: state.metadata.get('userInput')
+});
+
+Sender.propTypes = {
+  sendMessage: PropTypes.func,
+  inputTextFieldHint: PropTypes.string,
+  disabledInput: PropTypes.bool,
+  userInput: PropTypes.string
+};
+
+export default connect(mapStateToProps)(Sender);
+
+// const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
+//   const [inputValue, setInputValue] = useState('');
+//   const [keyValue, setKeyValue] = useState('');
+//   const formRef = useRef('');
+  
+//   function handleChange(e) {
+//     console.log("*******************************")
+
+//     console.log("handleChange: setInputValue(e.target.value) =  ",e.target.value)
+//     setInputValue(e.target.value);
+//     console.log("handleChange: setKeyValue(e.key) =  ",e.key)
+//     setKeyValue(e.key);
+//     onEnterPress()
+//   }
+
+//   function handleSubmit() {
+//     console.log("*******************************")
+//     // e.preventDefault()
+//     // console.log("handleSubmit e:",e)
+//     // console.log("inputValue e:",inputValue)
+//     // sendMessage(inputValue)
+//     // console.log("formRef : ",formRef)
+//     console.log("handleSubmit inputValue : ",inputValue)
+//     console.log("handleSubmit keyValue: ",keyValue)
+//     sendMessage(inputValue);
+//     setInputValue('');
+//     setKeyValue('');
+//   }
+
+//   function onEnterPress(keyValue) {
+
+//     console.log("function onEnterPress(keyValue) keyValue : ",keyValue)
+    
+//     if (keyValue === 'Enter'){// && key === '') { //matheus
+//       // e.preventDefault();
+
+//       // by dispatching the event we trigger onSubmit
+//       // formRef.current.submit()// would not trigger onSubmit
+      
+//       // formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
+      
+//       // console.log("ONENTERPRESS e",e)
+//       // console.log("inputValue e:",inputValue)
+//       console.log("if (keyValue === 'Enter') keyValue : ",keyValue)
+
+//       // e.a.value = inputValue    
+//       // a.value = inputValue
+//       handleSubmit()
+//       // handleSubmit(inputValue)
+//     }
+//   }
+  
+//   return (
+//     userInput === 'hide' ? <div /> : (
+//       <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
+//       {/* // <form className="rw-sender" onSubmit={handleSubmit}> */}
+//         <textarea onChange={handleChange}></textarea>
+//         <button type="submit" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
+//           <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
+//         </button>
+//       </form>));
+// };
 
 
 
@@ -82,18 +126,6 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 //       </button>
 //     </form>));
 // };
-const mapStateToProps = state => ({
-  userInput: state.metadata.get('userInput')
-});
-
-Sender.propTypes = {
-  sendMessage: PropTypes.func,
-  inputTextFieldHint: PropTypes.string,
-  disabledInput: PropTypes.bool,
-  userInput: PropTypes.string
-};
-
-export default connect(mapStateToProps)(Sender);
 
 // import React, { useState, useRef,  } from 'react';
 // import PropTypes from 'prop-types';

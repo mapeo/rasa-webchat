@@ -27,6 +27,7 @@
     "immutable": "^4.1.0",
     "object-hash": "^3.0.0",
     "prop-types": "^15.8.1",
+    "react-hook-form": "^7.34.2",
     "react-immutable-proptypes": "^2.2.0",
     "react-markdown": "^8.0.3",
     "react-popper": "^2.3.0",
