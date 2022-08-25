@@ -11,6 +11,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   const formRef = useRef('');
   
   function handleChange(e) {
+    console.log("*******************************")
+
     console.log("handleChange: setInputValue(e.target.value) =  ",e.target.value)
     setInputValue(e.target.value);
     console.log("handleChange: setKeyValue(e.key) =  ",e.key)
@@ -19,6 +21,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   }
 
   function handleSubmit() {
+    console.log("*******************************")
     // e.preventDefault()
     // console.log("handleSubmit e:",e)
     // console.log("inputValue e:",inputValue)
