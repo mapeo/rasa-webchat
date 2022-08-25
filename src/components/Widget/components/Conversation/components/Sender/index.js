@@ -11,7 +11,9 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   // const formRef = useRef('');
   
   function handleChange(e) {
+    console.log("handleChange: setInputValue(e.target.value) =  ",e.target.value)
     setInputValue(e.target.value);
+    console.log("handleChange: setKeyValue(e.key) =  ",e.key)
     setKeyValue(e.key);
     onEnterPress()
   }
@@ -22,21 +24,18 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     // console.log("inputValue e:",inputValue)
     // sendMessage(inputValue)
     // console.log("formRef : ",formRef)
-    console.log("inputValue : ",inputValue)
-    console.log("key: ",keyValue)
+    console.log("handleSubmit inputValue : ",inputValue)
+    console.log("handleSubmit keyValue: ",keyValue)
     sendMessage(inputValue);
     setInputValue('');
     setKeyValue('');
-
   }
 
   function onEnterPress(keyValue) {
 
-    console.log("keyValue : ",keyValue)
-
+    console.log("function onEnterPress(keyValue) keyValue : ",keyValue)
+    
     if (keyValue === 'Enter'){// && key === '') { //matheus
-      
-      
       // e.preventDefault();
 
       // by dispatching the event we trigger onSubmit
@@ -46,7 +45,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       
       // console.log("ONENTERPRESS e",e)
       // console.log("inputValue e:",inputValue)
-      console.log("keyValue : ",keyValue)
+      console.log("if (keyValue === 'Enter') keyValue : ",keyValue)
 
       // e.a.value = inputValue    
       // a.value = inputValue
