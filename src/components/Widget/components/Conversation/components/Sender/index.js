@@ -21,7 +21,6 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 
     if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
       
-      
       e.preventDefault();
 
       // by dispatching the event we trigger onSubmit
@@ -31,8 +30,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       
       console.log("ONENTERPRESS e",e)
 
-      sendMessage(inputValue)
-      setInputValue('')
+      handleSubmit(e)
     }
 
   return (
