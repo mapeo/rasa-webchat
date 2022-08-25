@@ -32,7 +32,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
       
       console.log("ONENTERPRESS e",e)
-      
+      e.value = inputValue    
+      sendMessage(inputValue)
       handleSubmit(e)
     }
   }
