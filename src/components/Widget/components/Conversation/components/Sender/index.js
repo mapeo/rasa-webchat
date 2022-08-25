@@ -1,4 +1,4 @@
-import React, { useForm, useState, useRef } from 'react';
+import React, {  useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import TextareaAutosize from 'react-textarea-autosize';
@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import './style.scss';
 
 // import { Link } from 'react-router-dom'
-// import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 const Sender = ({ }) => {
   
