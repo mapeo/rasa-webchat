@@ -38,6 +38,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       // console.log("inputValue e:",inputValue)
 
       e.a.value = inputValue    
+      a.value = inputValue
       handleSubmit(e)
       // handleSubmit(inputValue)
     }
