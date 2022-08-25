@@ -22,9 +22,9 @@ const Sender = () => {
 
     <form onSubmit={hendleSubmit(onSubmit)}>
       <textarea type="text" name="message" {...register("message")}></textarea>
-        <button type="submit" className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
-           <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
-         </button>
+        <buton type="submit" value="enviar"/>{/* <button type="submit" className="rw-send" disabled={!(inputValue && inputValue.length > 0)}> */}
+           {/* <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" /> */}
+
     </form>
   )
 
