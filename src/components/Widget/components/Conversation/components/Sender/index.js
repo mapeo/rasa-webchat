@@ -14,11 +14,11 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   }
 
   function handleSubmit(e) {
-    // e.preventDefault()
+    e.preventDefault()
     // console.log("handleSubmit e:",e)
     console.log("inputValue e:",inputValue)
-    sendMessage(inputValue)
-    // sendMessage(e);
+    // sendMessage(inputValue)
+    sendMessage(e);
     setInputValue('');
   }
 
@@ -27,21 +27,22 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
       
       
-      // e.preventDefault();
+      e.preventDefault();
 
       // by dispatching the event we trigger onSubmit
       // formRef.current.submit()// would not trigger onSubmit
       
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true }));
       
-      // console.log("ONENTERPRESS e",e)
-      console.log("inputValue e:",inputValue)
+      console.log("ONENTERPRESS e",e)
+      // console.log("inputValue e:",inputValue)
 
-      // e.value = inputValue    
-      // handleSubmit(e)
-      handleSubmit(inputValue)
+      e.a.value = inputValue    
+      handleSubmit(e)
+      // handleSubmit(inputValue)
     }
   }
+  
   return (
     userInput === 'hide' ? <div /> : (
       <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
