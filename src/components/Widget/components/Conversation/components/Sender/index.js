@@ -8,7 +8,7 @@ import './style.scss';
 const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
   const [inputValue, setInputValue] = useState('');
   const [keyValue, setKeyValue] = useState('');
-  // const formRef = useRef('');
+  const formRef = useRef('');
   
   function handleChange(e) {
     console.log("handleChange: setInputValue(e.target.value) =  ",e.target.value)
@@ -56,8 +56,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   
   return (
     userInput === 'hide' ? <div /> : (
-      // <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
-      <form className="rw-sender" onSubmit={handleSubmit}>
+      <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
+      {/* // <form className="rw-sender" onSubmit={handleSubmit}> */}
         <textarea onChange={handleChange}></textarea>
         <button type="submit" onClick={handleSubmit} className="rw-send" disabled={!(inputValue && inputValue.length > 0)}>
           <Send className="rw-send-icon" ready={!!(inputValue && inputValue.length > 0)} alt="send" />
