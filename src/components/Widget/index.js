@@ -570,14 +570,14 @@ class Widget extends Component {
     }
   }
 
-  handleMessageSubmit(event) {
-    event.preventDefault();
-    const userUttered = event.target.message.value;
+  handleMessageSubmit(inputUser) {
+    // event.preventDefault();
+    const userUttered = inputUser;
     if (userUttered) {
       this.props.dispatch(addUserMessage(userUttered));
       this.props.dispatch(emitUserMessage(userUttered));
     }
-    event.target.message.value = '';
+    inputUser = '';
   }
 
   render() {
