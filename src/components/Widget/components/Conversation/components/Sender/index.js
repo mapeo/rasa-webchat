@@ -13,6 +13,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     // onEnterPress(e)
   }
   function handleSubmit() {
+    console.log("inputValue = ",inputValue)
     sendMessage(inputValue);
     setInputValue('');
   }
@@ -21,7 +22,6 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     if (e.key === 'Enter' && inputValue !== ''){
       handleSubmit()
     }
-    
   }
   return (
     userInput === 'hide' ? <div /> : (
@@ -35,12 +35,10 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 const mapStateToProps = state => ({
   userInput: state.metadata.get('userInput')
 });
-
 Sender.propTypes = {
   sendMessage: PropTypes.func,
   inputTextFieldHint: PropTypes.string,
   disabledInput: PropTypes.bool,
   userInput: PropTypes.string
 };
-
 export default connect(mapStateToProps)(Sender);
