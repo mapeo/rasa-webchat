@@ -17,10 +17,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     setInputValue('');
   }
   function onEnterPress(e) {
-
     if (e.key === 'Enter' && inputValue !== 'Enter' ){
-      console.log(inputValue)
-      handleSubmit()
+      handleSubmit();
       setInputValue('')
     }
   }
