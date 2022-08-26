@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import TextareaAutosize from 'react-textarea-autosize';
 import Send from 'assets/send_button';
 import './style.scss';
 
@@ -13,7 +14,6 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     // onEnterPress(e)
   }
   function handleSubmit() {
-    console.log("inputValue = ",inputValue)
     sendMessage(inputValue);
     setInputValue('');
   }
@@ -23,6 +23,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       handleSubmit()
     }
   }
+
   return (
     userInput === 'hide' ? <div /> : (
       <form ref={formRef} className="rw-sender" onSubmit={handleSubmit}>
@@ -35,10 +36,12 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 const mapStateToProps = state => ({
   userInput: state.metadata.get('userInput')
 });
+
 Sender.propTypes = {
-  sendMessage: PropTypes.f*unc,
+  sendMessage: PropTypes.func,
   inputTextFieldHint: PropTypes.string,
   disabledInput: PropTypes.bool,
   userInput: PropTypes.string
 };
+
 export default connect(mapStateToProps)(Sender);
