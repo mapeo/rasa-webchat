@@ -25,7 +25,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
 
   function onEnterPress(e) {
 
-    if (e.key === 'Enter'){// && e.shiftKey === false) { //matheus
+    if (e.key === 'Enter' && inputValue !== ''){// && e.shiftKey === false) { //matheus
       
       
       // e.preventDefault();
@@ -37,7 +37,7 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
       
       // console.log("ONENTERPRESS e",e)
       // console.log("inputValue e:",inputValue)
-      console.log("formRef : ",formRef)
+      // console.log("formRef : ",formRef)
 
       // e.a.value = inputValue    
       // a.value = inputValue
