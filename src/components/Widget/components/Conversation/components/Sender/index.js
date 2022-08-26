@@ -11,7 +11,6 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   
   function handleChange(e) {
     setInputValue(e.target.value);
-    // onEnterPress(e)
   }
   function handleSubmit() {
     sendMessage(inputValue);
