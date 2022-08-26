@@ -12,12 +12,15 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
   const formRef = useRef('');
   
   function handleChange(e) {
+    console.log("VOLTEI COMMIT")
+
     setInputValue(e.target.value);
     setKeyValue(e.key);
     onEnterPress()
   }
 
   function handleSubmit() {
+    console.log("VOLTEI COMMIT")
     // e.preventDefault()
     // console.log("handleSubmit e:",e)
     // console.log("inputValue e:",inputValue)
