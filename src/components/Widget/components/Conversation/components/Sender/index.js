@@ -8,7 +8,7 @@ import './style.scss';
 const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) => {
   const [inputValue, setInputValue] = useState('');
   const formRef = useRef('');
-  
+
   function handleChange(e) {
     setInputValue(e.target.value);
   }
@@ -17,7 +17,8 @@ const Sender = ({ sendMessage, inputTextFieldHint, disabledInput, userInput }) =
     setInputValue('');
   }
   function onEnterPress(e) {
-    if (e.key === 'Enter' && inputValue !== 'Enter' ){
+    if (e.key === 'Enter') {
+      e.preventDefault()
       handleSubmit();
       setInputValue('')
     }
