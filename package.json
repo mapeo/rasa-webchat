@@ -1,6 +1,6 @@
 {
-  "name": "rasa-webchat",
-  "version": "1.0.2",
+  "name": "mapeo-rasa-webchat",
+  "version": "1.0.3",
   "description": "Chat web widget for React apps and Rasa Core chatbots",
   "module": "module/index.js",
   "main": "lib/index.js",
@@ -12,7 +12,9 @@
     "build": "webpack --config webpack.prod.js --mode production",
     "test": "jest",
     "prepare": "npm run build",
-    "release": "standard-version"
+    "release": "standard-version",
+    "fmt": "npx -p prettier@2 -- prettier -w '**/*.{js,md}'",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "react",
